@@ -1,6 +1,13 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.acme-font {
+  font-family: 'Acme', sans-serif;
+}
 
 :root {
   --background: #ffffff;

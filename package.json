@@ -9,15 +9,32 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "@openzeppelin/contracts": "^5.2.0",
+    "@rainbow-me/rainbowkit": "^2.2.3",
+    "@remix-project/remixd": "^0.6.44",
+    "@tanstack/react-query": "^5.64.2",
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "framer-motion": "^12.4.10",
+    "gsap": "^3.12.7",
+    "lucide-react": "^0.477.0",
+    "next": "15.1.6",
+    "pinata-web3": "^0.5.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.1.6"
+    "react-toastify": "^11.0.5",
+    "remixd": "^0.2.4",
+    "viem": "^2.22.12",
+    "wagmi": "^2.14.9"
   },
   "devDependencies": {
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
+    "@eslint/eslintrc": "^3",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
-    "@eslint/eslintrc": "^3"
+    "hardhat": "^2.22.18",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1"
   }
 }

@@ -1,0 +1,1338 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #2d2d2d;
+  border-radius: 10px;
+  display: none;
+}
+pre::-webkit-scrollbar-corner {
+  display: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  font-size: 1.4rem;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  background: #000;
+  color: #fff;
+  padding-block: 1rem;
+}
+
+/* Buttons */
+
+.btn {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-video {
+  padding: 0;
+  border-radius: 3rem;
+  overflow: hidden;
+  outline: none;
+  border: none;
+  position: relative;
+}
+
+.btn-video video {
+  width: 12rem;
+  height: 3.5rem;
+  object-fit: cover;
+  scale: 1.3;
+}
+
+.btn-main {
+  padding: 1.5rem 3rem;
+  width: 70%;
+  border-radius: 5rem;
+  background: #39FF14;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  color: #000;
+}
+
+.btn-main svg {
+  font-size: 3rem;
+  opacity: 0.7;
+  transition: 0.3s ease;
+}
+
+.btn-main:hover svg {
+  transform: translateX(50%);
+}
+
+.btn-sm {
+  width: fit-content;
+  font-size: 1.4rem;
+  padding: 1rem 3rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-sm svg {
+  opacity: 1;
+  font-size: 2rem;
+}
+
+.btn-main.btn-sm:hover svg {
+  transform: translateY(-30%);
+}
+
+.btn-primary {
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  font-family: "Poppins", sans-serif;
+  background: #000;
+  color: #fff;
+  transition: 0.3s ease;
+  position: relative;
+  width: 120;
+}
+
+.btn-primary::before {
+  position: absolute;
+  content: "";
+  inset: -1px;
+  z-index: -1;
+  background: linear-gradient(to right, #39FF14, #fff);
+  border-radius: 1rem;
+  transition: 0.3s ease;
+  animation: bg-animate 4s linear infinite;
+}
+
+.btn-primary svg {
+  color: #fff;
+  scale: 1.6;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  box-shadow: 0 0 1000px #fbff00;
+}
+
+.btn-primary:hover svg {
+  color: #39FF14;
+}
+
+.btn-white {
+  /* background: #fff; */
+  color: #000;
+  padding: 1rem 2rem;
+  font-family: "Poppins", sans-serif;
+  border-radius: 2rem;
+  font-size: 1.3rem;
+  width: fit-content;
+}
+
+@keyframes bg-animate {
+  0% {
+    background: linear-gradient(to right, #faff00, #fff);
+    background-size: 100%;
+  }
+  100% {
+    background: linear-gradient(to right, #fff, #faff00);
+    background-size: 500%;
+  }
+}
+
+/* Buttons */
+
+/* Navbar */
+
+.navbar-mobile {
+  display: none !important;
+}
+
+.navbar-content{
+  display: none;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  transition: all ease-in;
+}
+
+.navbar-pc {
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  top: 1rem;
+  padding-inline: 5rem;
+}
+
+.nav-item{
+  cursor: pointer;
+}
+
+.logo {
+  font-size: 2.4rem;
+  font-family: "Acme", sans-serif;
+}
+
+.logo span {
+  color: #faff00;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  font-size: 1.3rem;
+  border-radius: 1rem;
+  padding: 1rem 3.5rem;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2rem);
+}
+
+.nav-item.wallet-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ffffff0f;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid #ffffff17;
+  backdrop-filter: blur(1rem);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-item.wallet-info svg {
+  font-size: 2rem;
+  color: #249a4d;
+}
+
+/* Navbar */
+
+/* Page Container */
+
+.content {
+  height: 100%;
+  margin-top: 7rem;
+  z-index: 10;
+}
+
+/* Page Container */
+
+/* Headings */
+
+.heading {
+  font-size: 3rem;
+  font-family: "Acme", sans-serif;
+}
+
+.heading span {
+  color: #faff00;
+}
+
+.sub-heading {
+  font-size: 1.6rem;
+}
+
+.section-heading {
+  font-family: "Acme", sans-serif;
+  font-size: 3rem;
+}
+
+/* Headings */
+
+/* Cards */
+
+.nft-grid {
+  width: 100%;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  margin-top: 2rem;
+  transition: 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.btn-hover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Poppins", sans-serif;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  background: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+a.btn-hover {
+  color: #000;
+}
+
+.nft-grid img {
+  width: 100%;
+  height: 25rem;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.nft-grid-info {
+  font-size: 1.2rem;
+}
+
+.nft-grid-info > p,
+.nft-grid-info > span {
+  margin-left: 1rem;
+}
+
+.nft-grid-info span {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limits to 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  opacity: 0.7;
+}
+
+.nft-grid-info p {
+  font-size: 1.4rem;
+}
+
+.nft-grid-other-infos {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  display: flex;
+  padding: 0.5rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.nft-grid-other-infos .other-info {
+  width: 100%;
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0;
+}
+
+.nft-grid-other-infos .other-info p {
+  font-size: 1.3rem;
+}
+
+.nft-grid:hover {
+  box-shadow: 0.2rem 0.5rem 0 rgb(34, 34, 34);
+  transform: translateY(-0.2rem);
+}
+
+.nft-grid:hover .btn-hover {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  pointer-events: all;
+}
+
+/* Cards */
+
+/* Home */
+
+
+.home-hero video {
+  background: url("/hero-bg.mp4");
+  width: 90%;
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  opacity: 0.8;
+  filter: hue-rotate(100deg);
+}
+
+.home-hero .left {
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 3rem;
+  min-height: 35rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-hero .left::before {
+  content: "";
+  background: transparent;
+  mix-blend-mode: darken;
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(1rem);
+  z-index: -1;
+  background: linear-gradient(to bottom, transparent, #000),
+    linear-gradient(to right, transparent, #00000065, #00000038, #000);
+}
+
+.home .home-hero .heading {
+  font-size: 5rem;
+  width: 90%;
+  color: #fff;
+  margin-top: 3rem;
+}
+
+.home .home-hero p {
+  font-size: 2rem;
+  font-family: "Acme", sans-serif;  margin-bottom: 2rem;
+  line-height: 1.8;
+  opacity: 0.8;
+  width: 70%;
+}
+
+.home .home-hero p::first-line {
+  font-size: 2rem;
+  font-family: "Acme", sans-serif;
+  color: #faff00;
+  opacity: 1;
+}
+
+.home .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.8rem;
+  width: 60%;
+}
+
+.home .right .sub-heading {
+  width: 70%;
+  font-size: 1.4rem;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.section {
+  margin-top: 5rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+}
+
+.home-feature {
+  margin-top: 8rem;
+  width: 100%;
+}
+
+.home-how-to {
+  border: none;
+  position: relative;
+  color: #000;
+  z-index: 1;
+  overflow: hidden;
+  width: 100%;
+}
+
+.home-how-to .section-header {
+  justify-content: center;
+  color: #fff;
+  border: none;
+}
+
+.step {
+  padding: 4rem 3rem;
+  background: #fff;
+  position: relative;
+  margin-bottom: 4rem;
+  border-radius: 1rem;
+}
+
+/* #step-1, #step-3{
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+#step-1, #step-2{
+  border-top-right-radius: 0.5rem;
+}
+
+#step-3, #step-2{
+  border-bottom-right-radius: 0.5rem;
+} */
+
+.step .step-title {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.step-title span {
+  opacity: 0.4;
+  font-family: "Acme", sans-serif;
+}
+
+#step-1 {
+  background: #faff00;
+}
+
+#step-2 {
+  background: #fff;
+}
+
+#step-3 {
+  background: #fff;
+}
+
+.step-icon {
+  position: absolute;
+  top: -5rem;
+  font-size: 3rem;
+  font-family: "Acme", sans-serif;
+  background: inherit;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#step-2 .step-icon {
+  right: 5rem;
+}
+
+/* Home */
+
+/* Upload */
+
+.upload-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.upload-bg video {
+  overflow: hidden;
+  object-fit: contain;
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  scale: 1.5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-30%, -40%);
+}
+
+/* Upload */
+
+/* NFT Details */
+
+.nft-details-bg {
+  width: 100%;
+  background-size: 150% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  position: relative;
+  border-radius: 5rem;
+  overflow: hidden;
+  padding: 5rem;
+  display: flex; /* Enables row layout */
+  align-items: center; /* Centers items vertically */
+  justify-content: space-between; /* Ensures spacing between image and info */
+  gap: 3rem;
+}
+
+.nft-details-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2rem);
+  z-index: 1;
+}
+
+.nft-details-bg .nft-image ,
+.nft-details-bg .nft-info {
+  z-index: 3; /* Increased to be above the overlay */
+  position: relative; /* Ensure it's placed above the overlay */
+  padding: 2rem 5rem;
+  flex: 1; /* Takes up 50% of the space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.nft-details-bg .nft-image img {
+  max-height: 60vh;
+  max-width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.1),
+    -0.3rem -0.3rem 1rem rgba(0, 0, 0, 0.1);
+  object-fit: cover;  
+}
+
+.nft-details-bg button {
+  z-index: 5 !important;
+}
+
+.nft-details-bg .nft-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nft-details-bg .nft-info h2 {
+  font-family: "Acme", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 0.8rem;
+}
+
+.nft-details-bg .nft-info .creator {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.nft-details-bg .nft-info .creator span {
+  font-family: "Acme", sans-serif;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(2rem);
+  color: #fff;
+}
+
+.nft-details-bg .nft-info p {
+  line-height: 1.7;
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.nft-details-bg .nft-info button {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nft-details-bg .nft-info button span {
+  font-family: "Acme", sans-serif;
+  font-size: 1.5rem;
+}
+
+.nft-details-bg .nft-info button svg {
+  font-size: 3rem;
+  margin-top: -0.5rem;
+  color: #249a4d;
+}
+
+.nft-details-bg .nft-info .date {
+  color: #fff;
+  padding: 0.8rem 2rem;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 1rem;
+  width: fit-content;
+  backdrop-filter: blur(2rem);
+  font-family: "Acme", sans-serif;
+}
+
+/* NFT Details */
+
+/* Form */
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input-container {
+  width: 100%;
+}
+
+.input-container input,
+.input-container textarea {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: #222;
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.3rem;
+}
+
+.input-container textarea {
+  height: 10rem;
+  resize: none;
+}
+
+.input-container input:hover,
+.input-container textarea:hover {
+  border: 1px solid rgba(255, 255, 255, 1);
+}
+
+.input-container input:focus,
+.input-container textarea:focus {
+  border: 1px solid #faff00;
+}
+
+.input-container input:disabled {
+  color: #faff00;
+  border-color: transparent;
+}
+
+.image-container {
+  width: 50%;
+  min-width: 25rem;
+  min-height: 15rem;
+  border-radius: 0.5rem;
+  background: #00000079;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.image-added.image-container {
+  width: 100%;
+  height: 25rem;
+}
+
+.image-container::before {
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.05);
+  inset: 1rem;
+  border-radius: 0.5rem;
+  backdrop-filter: blur(0.5rem);
+  pointer-events: none;
+  transition: 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+
+.image-container:hover::before {
+  backdrop-filter: blur(0);
+}
+
+.image-container svg {
+  font-size: 5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.image-container label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.image-container label span {
+  color: #faff00;
+}
+
+.image-container input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  cursor: pointer;
+}
+
+.image-preview {
+  position: absolute;
+  inset: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-preview img {
+  max-height: 90%;
+  max-width: 80%;
+  object-fit: contain;
+}
+
+.remove-image {
+  position: absolute;
+  color: #000;
+  top: 1rem;
+  right: 1rem;
+  height: 3rem;
+  width: 3rem;
+  background: #000000;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+
+.remove-image svg {
+  font-size: 2rem;
+  color: #fff;
+  opacity: 1;
+}
+
+.image-container {
+  z-index: 1;
+}
+
+.image-container::before {
+  z-index: 2;
+}
+
+.image-container label {
+  z-index: 3;
+}
+
+.image-container .image-preview,
+.image-container .image-preview img {
+  z-index: 5;
+}
+
+.remove-image {
+  z-index: 10;
+  cursor: pointer;
+}
+
+.remove-image svg {
+  position: relative;
+  color: #fff;
+  transform: none;
+  top: 0;
+  left: 0;
+  font-size: 1.4rem;
+}
+
+.image-added label {
+  display: none;
+}
+
+.select__control--menu-is-open.select__control:hover {
+  border: 1px solid #faff00 !important;
+}
+
+.basic-multi-select {
+  width: 100%;
+}
+/* Form */
+
+/* Alerts & Popups */
+
+.react-confirm-alert-overlay {
+  background: rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(1rem);
+}
+
+.react-confirm-alert-body {
+  background: #faff00 !important;
+  color: #000 !important;
+  font-family: "Poppins", sans-serif;
+}
+
+.react-confirm-alert-body h1 {
+  font-family: "Acme", sans-serif !important;
+  margin-bottom: 0.5rem;
+}
+
+.react-confirm-alert-button-group button {
+  font-family: "Poppins", sans-serif;
+  border: 1px solid #33333344 !important;
+}
+
+.react-confirm-alert-button-group button:hover {
+  background: #fff;
+  color: #000;
+}
+
+.custom-toast {
+  background: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(10px);
+  color: #ffffffad !important;
+  border-radius: 1rem;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: 1px solid #ffffff57;
+}
+
+.custom-toast svg {
+  color: #ffffff;
+  fill: #fff;
+  opacity: 1 !important;
+}
+
+.Toastify__close-button--light {
+  opacity: 1;
+}
+
+.custom-toast .Toastify__progress-bar {
+  background: #faff00;
+  box-shadow: none;
+}
+
+.Toastify__progress-bar--bg {
+  opacity: 1;
+  background: #ffffff0a;
+}
+
+/* Modal */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: black;
+  padding: 20px; /* Increased padding */
+  border-radius: 10px;
+  text-align: center;
+  z-index: 1002;
+  width: 30%; /* Increased width */
+  max-width: 600px; /* Added max width */
+  height: 200px; /* Increased height */
+  max-height: 80vh; /* Prevents overflow */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Alerts & Popups */
+
+/* Loader */
+
+.loader {
+  width: 50px;
+  height: calc(50px * 0.866);
+  background: #39FF14;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  --c: at 50% 66%, #000 60deg, #0000 0;
+  -webkit-mask: conic-gradient(from 30deg var(--c)) right,
+    conic-gradient(from 150deg var(--c)) bottom,
+    conic-gradient(from -90deg var(--c)) left, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  -webkit-mask-repeat: no-repeat;
+  animation: l9 1.5s infinite;
+}
+@keyframes l9 {
+  0% {
+    -webkit-mask-size: 0 0, 0 0, 0 0, auto;
+  }
+  13.33% {
+    -webkit-mask-size: 100% 100%, 0 0, 0 0, auto;
+  }
+  26.67% {
+    -webkit-mask-size: 100% 100%, 100% 100%, 0 0, auto;
+  }
+  40%,
+  60% {
+    -webkit-mask-size: 100% 100%, 100% 100%, 100% 100%, auto;
+  }
+  73.33% {
+    -webkit-mask-size: 0 0, 100% 100%, 100% 100%, auto;
+  }
+  86.67% {
+    -webkit-mask-size: 0 0, 0 0, 100% 100%, auto;
+  }
+  100% {
+    -webkit-mask-size: 0 0, 0 0, 0 0, auto;
+  }
+}
+
+.loader-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.empty {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff2b;
+  font-size: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty span {
+  font-size: 2rem;
+  color: #faff00;
+}
+
+.empty span small {
+  font-family: "Acme", sans-serif;
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+/* Loader */
+
+/* Media Query */
+
+@media (max-width: 1200px){
+  .home-hero .left{
+    min-height: 30rem;
+  }
+  .home .home-hero p{
+    margin-top: 4rem;
+  }
+  .home .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 1.8rem;
+    
+    padding-left: 3rem;
+  }
+
+  .home .right .sub-heading{
+    width: 100%;
+  }
+}
+
+@media (max-width: 990px){
+  .nft-details-bg{
+    padding: 5rem 0;
+  }
+  .nft-details-bg .nft-image, .nft-details-bg .nft-info{
+    padding: 0 5rem;
+    padding-bottom: 2rem;
+  }
+  .nft-details-bg .nft-image img{
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+@media (max-width: 830px) {
+  .navbar-pc {
+    display: none !important;
+  }
+  .navbar-mobile {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100vw - 4rem);
+    position: fixed;
+    left: 2rem;
+    right: 2rem;
+    top: 1rem;
+    padding-inline: 5rem;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2rem);
+    border-radius: 5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding-block: 0.5rem;
+  }
+
+}
+
+.navbar-collapse {
+  height: 4rem;
+  width: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 2rem;
+  background: #0000004f;
+  backdrop-filter: blur(2rem);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #faff00;
+  cursor: pointer;
+}
+
+.navbar-content{
+  position: fixed;
+  height: calc(100vh + 2rem);
+  width: 100vw;
+  top: -2rem;
+  left: -2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 10;
+  transition: 0.3s ease;
+}
+
+.navbar-content .nav-items{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-inline: 10rem;
+  background: none !important;
+  backdrop-filter: none;
+}
+
+
+.navbar-content .nav-items .nav-item{
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  padding-bottom: 2rem;
+  font-size: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s ease;
+}
+
+.navbar-content .nav-items .nav-item:hover span{
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar-content .nav-items .nav-item:hover{
+  color: #faff00;
+  font-family: "Acme", sans-serif;
+  font-size: 2rem;
+}
+
+.navbar-content .nav-items .nav-item span{
+  font-family: "Acme", sans-serif;
+  font-size: 1.3rem;
+  color: #faff00;
+}
+
+.navbar-content .nav-item.wallet-info{
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(0.1rem);
+  flex-direction: row;
+  padding-bottom: 1rem;
+  width: fit-content;
+}
+
+.navbar-content .nav-item.wallet-info span{
+  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  margin-left: 0.5 rem;
+}
+
+.navbar-content.closed{
+  transform: translateX(-110%);
+}
+
+@media (max-width: 768px) {
+  /* .home-hero {
+    flex-direction: column;
+    margin-top: 4rem;
+  } */
+  .home-hero {
+    flex-direction: column;
+    padding: 2 2rem; /* Added overall container padding */
+  }
+  
+  .home-hero .left,
+  .home-hero .right {
+    width: 100%;
+    padding: 0 2.5rem; /* Increased horizontal padding */
+  }
+  
+  .home .home-hero .heading {
+    font-size: 3.2rem;
+    width: 100%;
+    margin-top: 2rem;
+    padding: 0 0.5rem; /* Added padding for heading */
+  }
+  
+  .home .home-hero p {
+    font-size: 1.6rem;
+    width: 100%;
+    margin-bottom: 3rem;
+    padding: 0 0.5rem; /* Added padding for paragraph */
+  }
+  
+  .home .right {
+    align-items: center;
+    padding: 3rem 2.5rem 4.5rem; /* Increased padding all around */
+  }
+  
+  .home .right .sub-heading {
+    width: 100%;
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 0 0.5rem; /* Added padding */
+  }
+  
+ 
+}
+
+@media (max-width: 500px){
+  .home-hero {
+    padding: 2 1rem; /* Added overall container padding */
+  }
+  .page.upload .d-flex{
+    flex-direction: column;
+  }
+
+  .page.upload .d-flex.mb-1,.d-flex.mb-2{
+    margin-bottom: 0rem !important;
+  }
+
+  .page.upload .upload-bg{
+    display: none;
+  }
+}
+
+
+@media (max-width: 420px){
+  .home .home-hero .heading{
+    font-size: 3.5rem;
+  }
+  .home .home-hero p{
+    width: 100%;
+  }
+  .btn-main{
+    font-size: 1.5rem;
+  }
+  .section-heading{
+    font-size: 2.4rem;
+  }
+  .btn-primary{
+    font-size: 1.2rem;
+  }
+  .section{
+    padding-inline: 1rem;
+  }
+  .step .step-title{
+    font-size: 2.5rem;
+  }
+  body{
+    font-size: 1.3rem;
+  }
+  .navbar-mobile{
+    left: 1rem;
+    right: 1rem;
+    padding-inline: 2rem;
+  }
+  .home .right .sub-heading{
+    display: none;
+  }
+  .page.upload h2{
+    font-size: 1.8rem;
+  }
+  .navbar-content .nav-items{
+    padding-left: 6rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-hero {
+    padding: 2 1rem; /* Added overall container padding */
+  }
+  
+  .home .home-hero .heading {
+    font-size: 2.8rem;
+    padding: 0 0.5rem; /* Maintained padding */
+  }
+  
+  .home .home-hero p {
+    font-size: 1.5rem;
+    padding: 0 0.5rem; /* Maintained padding */
+  }
+  
+  .home .right .sub-heading {
+    font-size: 1.5rem;
+    padding: 0 1rem; /* Increased padding for smaller screens */
+  }
+  
+  .home-hero .left {
+    min-height: auto;
+    padding: 2rem 1.5rem; /* Added vertical and horizontal padding */
+  }
+  
+  .home-hero .right {
+    padding: 2rem 1.5rem 3rem; /* Adjusted padding for smaller screens */
+  }
+}
+
+/* Media Query */
+
+/* Error */
+
+.error-not-found{
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  font-family: "Acme", sans-serif;
+}
+
+.error-not-found h2 a{
+  color: #faff00;
+  text-decoration: underline;
+}
+/* Error */
