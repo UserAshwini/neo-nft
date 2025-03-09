@@ -29,7 +29,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <div className="row mt-10 md:mt-20 home-how-to min-w-screen px-4 md:px-0">
+    <div className="row mt-10 md:mt-20 home-how-to min-w-screen px-4 md:px-16">
       <div className="section-header col-12">
         <div className="section-heading mb-10 md:mb-20">How It Works</div>
       </div>
