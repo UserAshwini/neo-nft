@@ -15,11 +15,13 @@ import { MoveRight, Sparkles } from "lucide-react";
 import BtnPrimary from "@/components/buttons/BtnPrimary";
 import AnimatedText from "@/components/cards/AnimatedText";
 import HowItWorks from "@/components/cards/HowItWorks";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [nfts, setNfts] = useState([]);
   const [loadingState, setLoadingState] = useState("not-loaded");
   // const { address } = useAccount();
+  const router = useRouter();
 
   useEffect(() => {
     fetchNFTs();
@@ -88,7 +90,10 @@ export default function Home() {
               Join the community of creators and collectors by exploring the
               latest in digital art.
             </div>
-            <button className="btn btn-main" to="/explore">
+            <button
+              className="btn btn-main"
+              onClick={() => router.push("/explore")}
+            >
               Explore NFTs
               <MoveRight />
             </button>

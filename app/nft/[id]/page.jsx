@@ -14,13 +14,15 @@ import NFT from "../../../artifacts/contracts/NFT.sol/NFT.json";
 import axios from "axios";
 import { ethers } from "ethers";
 import { useAccount } from "wagmi";
+import CustomConnectButton from "@/components/cards/CustomConnectWallet";
 
 const NftDetail = () => {
   const { id } = useParams();
   const [nft, setNft] = useState(null);
   const [loadingState, setLoadingState] = useState("not-loaded");
   const [error, setError] = useState(null);
-  // const { address } = useAccount();
+  const { isConnected } = useAccount(); // Get wallet connection status
+
   const [isSold, setIsSold] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [transactionStatus, setTransactionStatus] = useState(null);
@@ -172,7 +174,25 @@ const NftDetail = () => {
               <button className="btn btn-white bg-white" onClick={() => {}}>
                 View On<span>Explorer</span>
               </button>
-              <button
+              {/* Show CustomConnectButton if wallet is not connected */}
+              {!isConnected ? (
+                <div className="-mt-12">
+                  <CustomConnectButton />
+                </div>
+              ) : (
+                <button
+                  className={`btn btn-white bg-[#39FF14] ${
+                    isSold ? "opacity-50 cursor-not-allowed" : ""
+                  }`}
+                  style={{ marginTop: "5px" }}
+                  onClick={() => nft && handleBuy(nft)}
+                  disabled={isSold}
+                >
+                  {isSold ? "Sold Out" : "Buy NFT"}
+                </button>
+              )}
+
+              {/* <button
                 className={`btn btn-white bg-[#39FF14] ${
                   isSold ? "opacity-50 cursor-not-allowed" : ""
                 }`}
@@ -181,7 +201,7 @@ const NftDetail = () => {
                 disabled={isSold} // Disable if NFT is sold
               >
                 {isSold ? "Sold Out" : "Buy NFT"}
-              </button>
+              </button> */}
               <p className="date">{nft.price} ETH</p>
             </div>
           </div>
