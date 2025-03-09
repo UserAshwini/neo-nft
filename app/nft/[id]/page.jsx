@@ -47,6 +47,8 @@ const NftDetail = () => {
       });
       console.log(buyNftRequest);
       const txHash = await writeContract(config, buyNftRequest);
+      // const txHash =
+      //   "0x4cba094eeaf8085a3a41b356215fffd8b008526ad8dc409d673f377e02a366bd";
       setTransactionStatus("Waiting for confirmation...");
       console.log("txHash :", txHash);
       await waitForTransactionReceipt(config, { hash: txHash });

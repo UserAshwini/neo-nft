@@ -15,6 +15,10 @@ import { config } from "../providers/walletProviders";
 import { useRouter } from "next/navigation";
 import { CloudUpload } from "lucide-react";
 import ImageUpload from "@/components/cards/ImageUpload";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useAccount } from "wagmi";
+import CustomConnectButton from "@/components/cards/CustomConnectWallet";
 
 const pinata = new PinataSDK({
   pinataJwt: process.env.NEXT_PUBLIC_PINATA_JWT,
@@ -27,6 +31,7 @@ export default function CreateItem() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [transactionStatus, setTransactionStatus] = useState(null);
   const [transactionHash, setTransactionHash] = useState(null);
+  const { isConnected } = useAccount();
   const [formInput, updateFormInput] = useState({
     price: "",
     name: "",
@@ -41,6 +46,24 @@ export default function CreateItem() {
 
   async function uploadItem() {
     const { name, description, price } = formInput;
+
+    // Check if any of the required fields are empty
+    if (!name) {
+      toast.error("Asset name is required");
+      return;
+    }
+    if (!description) {
+      toast.error("Asset description is required");
+      return;
+    }
+    if (!price) {
+      toast.error("Asset price is required");
+      return;
+    }
+    if (!fileUrl) {
+      toast.error("Asset image is required");
+      return;
+    }
     let url = process.env.NEXT_PUBLIC_PINATA_GATEWAY;
     setTransactionStatus("Uploading Metadata...");
     try {
@@ -121,6 +144,18 @@ export default function CreateItem() {
 
   return (
     <>
+      <ToastContainer
+        position="top-right"
+        autoClose={8000}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick={true}
+        rtl={false}
+        pauseOnFocusLoss={true}
+        draggable={true}
+        pauseOnHover={true}
+        theme="dark"
+      />
       {isModalOpen && (
         <div className="modal-overlay">
           <div className="modal-content">
@@ -191,14 +226,20 @@ export default function CreateItem() {
             // onImageBase64={onChange}
             onImageUrl={handleImageUrl}
           />
-          <button
-            onClick={uploadItem}
-            className=" flex justify-center gap-4 font-bold mt-4 bg-gradient-to-r from-yellow-500 to-[#39FF14] text-white rounded p-4 shadow-lg"
-            value="create-nft"
-          >
-            Create Digital Asset
-            <CloudUpload />
-          </button>
+          {!isConnected ? (
+            <div className="flex justify-center">
+              <CustomConnectButton />
+            </div>
+          ) : (
+            <button
+              onClick={uploadItem}
+              className=" flex justify-center gap-4 font-bold mt-4 bg-gradient-to-r from-yellow-500 to-[#39FF14] text-white rounded p-4 shadow-lg"
+              value="create-nft"
+            >
+              Create Digital Asset
+              <CloudUpload />
+            </button>
+          )}
         </div>
       </div>
     </>

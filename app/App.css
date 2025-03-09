@@ -942,16 +942,17 @@ form {
   justify-content: center;
   z-index: 1000;
 }
+
 .modal-content {
   background: black;
-  padding: 20px; /* Increased padding */
+  padding: 2rem;
   border-radius: 10px;
   text-align: center;
   z-index: 1002;
-  width: 30%; /* Increased width */
-  max-width: 600px; /* Added max width */
-  height: 200px; /* Increased height */
-  max-height: 80vh; /* Prevents overflow */
+  width: 90%;
+  max-width: 600px;
+  min-height: 200px;
+  max-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1068,6 +1069,10 @@ form {
     width: 100%;
     object-fit: cover;
     object-position: top;
+  }
+  .modal-content {
+    width: 30%;
+    padding: 3rem;
   }
 }
 
@@ -1222,6 +1227,11 @@ form {
     margin-bottom: 2rem;
     padding: 0 0.5rem; /* Added padding */
   }
+
+  .modal-content {
+    width: 60%;
+    padding: 2.5rem;
+  }
   
  
 }
@@ -1313,6 +1323,17 @@ form {
   
   .home-hero .right {
     padding: 2rem 1.5rem 3rem; /* Adjusted padding for smaller screens */
+  }
+  .text-3xl {
+    font-size: 1.5rem;
+  }
+  
+  .text-2xl {
+    font-size: 1.25rem;
+  }
+
+  .loader-center {
+    margin-top: 1rem;
   }
 }
 
