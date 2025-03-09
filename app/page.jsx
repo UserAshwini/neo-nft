@@ -72,7 +72,7 @@ export default function Home() {
   }
 
   return (
-    <div className="flex justify-center ">
+    <div className="flex justify-center px-8 md:px-20">
       <div className="page home containe">
         <div className="flex home-hero mt-32">
           <div className="left col-12 col-md-6 w-50">
@@ -99,7 +99,7 @@ export default function Home() {
             </button>
           </div>
         </div>
-        <div className=" section home-feature">
+        <div className=" section home-feature ">
           <div className="section-header col-12">
             <div className="section-heading">Our Cool NFTs</div>
 
